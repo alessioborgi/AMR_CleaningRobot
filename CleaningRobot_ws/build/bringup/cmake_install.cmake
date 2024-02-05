@@ -1,4 +1,4 @@
-# Install script for directory: /home/ale/CleaningRobot_RP/CleaningRobot_ws/src
+# Install script for directory: /home/ale/CleaningRobot_RP/CleaningRobot_ws/src/bringup
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -140,7 +140,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bringup" TYPE FILE FILES "/home/ale/CleaningRobot_RP/CleaningRobot_ws/src/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/bringup" TYPE FILE FILES "/home/ale/CleaningRobot_RP/CleaningRobot_ws/src/bringup/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

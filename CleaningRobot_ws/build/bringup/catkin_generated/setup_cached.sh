@@ -9,4 +9,4 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup:$CMAKE_PREFIX_PATH"
 export PWD='/home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup'
-export ROS_PACKAGE_PATH="/home/ale/CleaningRobot_RP/CleaningRobot_ws/src:$ROS_PACKAGE_PATH"
+export ROS_PACKAGE_PATH="/home/ale/CleaningRobot_RP/CleaningRobot_ws/src/bringup:$ROS_PACKAGE_PATH"

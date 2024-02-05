@@ -1,4 +1,4 @@
-.
+bringup
 /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup/cmake.lock /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/./cmake.lock
 /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup/share/bringup/cmake/bringupConfig.cmake /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/share/bringup/cmake/bringupConfig.cmake
 /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup/share/bringup/cmake/bringupConfig-version.cmake /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/share/bringup/cmake/bringupConfig-version.cmake

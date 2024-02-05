@@ -67,7 +67,7 @@ set(bringup_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(bringup_SOURCE_PREFIX /home/ale/CleaningRobot_RP/CleaningRobot_ws/src)
+  set(bringup_SOURCE_PREFIX /home/ale/CleaningRobot_RP/CleaningRobot_ws/src/bringup)
   set(bringup_DEVEL_PREFIX /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup)
   set(bringup_INSTALL_PREFIX "")
   set(bringup_PREFIX ${bringup_DEVEL_PREFIX})

@@ -13,31 +13,25 @@ Not searching for unused variables given on the command line.
 [36m--[0m Detecting CXX compiler ABI info - done
 [36m--[0m Detecting CXX compile features
 [36m--[0m Detecting CXX compile features - done
-[31m[1mCMake Error[0m at /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/catkin_tools_prebuild/CMakeLists.txt:12 (message):
-  The catkin CMake module was not found, but it is required to build a linked
-  workspace.  To resolve this, please do one of the following, and try
-  building again.
-
-
-
-   1. Source the setup.sh file from an existing catkin workspace:
-      source SETUP_FILE
-
-
-
-   2. Extend another catkin workspace's result (install or devel) space:
-      catkin config --extend RESULT_SPACE
-
-
-
-   3. Set `catkin_DIR` to the directory containing `catkin-config.cmake`:
-      catkin config --cmake-args -Dcatkin_DIR=CATKIN_CMAKE_CONFIG_PATH
-
-
-
-   4. Add the catkin source package to your workspace's source space:
-      cd SOURCE_SPACE && git clone https://github.com/ros/catkin.git
-
-
-[36m--[0m Configuring incomplete, errors occurred!
-See also "/home/ale/CleaningRobot_RP/CleaningRobot_ws/build/catkin_tools_prebuild/CMakeFiles/CMakeOutput.log".
+[36m--[0m Using CATKIN_DEVEL_PREFIX: /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/catkin_tools_prebuild
+[36m--[0m Using CMAKE_PREFIX_PATH: /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel;/opt/ros/noetic
+[36m--[0m This workspace overlays: /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel;/opt/ros/noetic
+[36m--[0m Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3")
+[36m--[0m Using PYTHON_EXECUTABLE: /usr/bin/python3
+[36m--[0m Using Debian Python package layout
+[36m--[0m Found PY_em: /usr/lib/python3/dist-packages/em.py
+[36m--[0m Using empy: /usr/lib/python3/dist-packages/em.py
+[36m--[0m Using CATKIN_ENABLE_TESTING: ON
+[36m--[0m Call enable_testing()
+[36m--[0m Using CATKIN_TEST_RESULTS_DIR: /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/catkin_tools_prebuild/test_results
+[36m--[0m Forcing gtest/gmock from source, though one was otherwise available.
+[36m--[0m Found gtest sources under '/usr/src/googletest': gtests will be built
+[36m--[0m Found gmock sources under '/usr/src/googletest': gmock will be built
+[36m--[0m Found PythonInterp: /usr/bin/python3 (found version "3.8.10")
+[36m--[0m Found Threads: TRUE
+[36m--[0m Using Python nosetests: /usr/bin/nosetests3
+[36m--[0m catkin 0.8.10
+[36m--[0m BUILD_SHARED_LIBS is on
+[36m--[0m Configuring done
+[36m--[0m Generating done
+[36m--[0m Build files have been written to: /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/catkin_tools_prebuild

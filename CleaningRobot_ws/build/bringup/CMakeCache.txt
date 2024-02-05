@@ -395,7 +395,7 @@ actionlib_msgs_DIR:PATH=/opt/ros/noetic/share/actionlib_msgs/cmake
 bringup_BINARY_DIR:STATIC=/home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup
 
 //Value Computed by CMake
-bringup_SOURCE_DIR:STATIC=/home/ale/CleaningRobot_RP/CleaningRobot_ws/src
+bringup_SOURCE_DIR:STATIC=/home/ale/CleaningRobot_RP/CleaningRobot_ws/src/bringup
 
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
@@ -629,7 +629,7 @@ CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=1
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/ale/CleaningRobot_RP/CleaningRobot_ws/src
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/ale/CleaningRobot_RP/CleaningRobot_ws/src/bringup
 //ADVANCED property for variable: CMAKE_INSTALL_BINDIR
 CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_DATADIR
