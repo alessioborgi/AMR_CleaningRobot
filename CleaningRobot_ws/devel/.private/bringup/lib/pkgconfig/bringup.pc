@@ -1,0 +1,8 @@
+prefix=/home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup
+
+Name: bringup
+Description: Description of bringup
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
