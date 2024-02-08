@@ -49,11 +49,12 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>roscpp</build_depend>
-  <build_depend>webots_ros</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>geometry_msgs</build_depend>
+  <build_depend>webots-ros</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <build_depend>xacro</build_depend>
+  <exec_depend>xacro</exec_depend>
+
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
