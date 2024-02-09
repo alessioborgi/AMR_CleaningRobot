@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <launch>
   <!-- launch a Rviz for the minial robot view -->
-  <arg name="rvizconfig" default="$(find bringup)/visualization/rviz_cfg/4wheelrobot.rviz" />
+  <!-- <arg name="rvizconfig" default="$(find bringup)/visualization/rviz_cfg/4wheelrobot.rviz" /> -->
+  <arg name="rvizconfig" default="$(find bringup)/visualization/rviz_cfg/testing.rviz" />
+
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig) -f map" required="true" />
 
