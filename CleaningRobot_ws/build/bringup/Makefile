@@ -113,17 +113,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -134,6 +123,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -493,6 +493,19 @@ roscpp_generate_messages_py/fast:
 .PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_nodejs
+
+# Build rule for target.
+sensor_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -727,19 +740,6 @@ tf_generate_messages_lisp/fast:
 .PHONY : tf_generate_messages_lisp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_nodejs
-
-# Build rule for target.
-sensor_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
 # Target rules for targets named tf_generate_messages_nodejs
 
 # Build rule for target.
@@ -909,6 +909,19 @@ tf2_msgs_generate_messages_nodejs/fast:
 .PHONY : tf2_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named localize
+
+# Build rule for target.
+localize: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 localize
+.PHONY : localize
+
+# fast build rule for target.
+localize/fast:
+	$(MAKE) -f CMakeFiles/localize.dir/build.make CMakeFiles/localize.dir/build
+.PHONY : localize/fast
+
+#=============================================================================
 # Target rules for targets named gmock_main
 
 # Build rule for target.
@@ -959,6 +972,33 @@ gtest: cmake_check_build_system
 gtest/fast:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
+
+src/localization.o: src/localization.cpp.o
+
+.PHONY : src/localization.o
+
+# target to build an object file
+src/localization.cpp.o:
+	$(MAKE) -f CMakeFiles/localize.dir/build.make CMakeFiles/localize.dir/src/localization.cpp.o
+.PHONY : src/localization.cpp.o
+
+src/localization.i: src/localization.cpp.i
+
+.PHONY : src/localization.i
+
+# target to preprocess a source file
+src/localization.cpp.i:
+	$(MAKE) -f CMakeFiles/localize.dir/build.make CMakeFiles/localize.dir/src/localization.cpp.i
+.PHONY : src/localization.cpp.i
+
+src/localization.s: src/localization.cpp.s
+
+.PHONY : src/localization.s
+
+# target to generate assembly for a file
+src/localization.cpp.s:
+	$(MAKE) -f CMakeFiles/localize.dir/build.make CMakeFiles/localize.dir/src/localization.cpp.s
+.PHONY : src/localization.cpp.s
 
 src/sensor_enable.o: src/sensor_enable.cpp.o
 
@@ -1050,6 +1090,8 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_py"
+	@echo "... edit_cache"
+	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_eus"
@@ -1069,8 +1111,6 @@ help:
 	@echo "... tf_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_nodejs"
-	@echo "... edit_cache"
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_eus"
@@ -1084,10 +1124,14 @@ help:
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
+	@echo "... localize"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/localization.o"
+	@echo "... src/localization.i"
+	@echo "... src/localization.s"
 	@echo "... src/sensor_enable.o"
 	@echo "... src/sensor_enable.i"
 	@echo "... src/sensor_enable.s"

@@ -55,6 +55,7 @@ CMAKE_BINARY_DIR = /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup
 # The main recursive "all" target.
 all: CMakeFiles/dynamic_link_camera.dir/all
 all: CMakeFiles/enable.dir/all
+all: CMakeFiles/localize.dir/all
 all: gtest/all
 
 .PHONY : all
@@ -90,6 +91,7 @@ clean: CMakeFiles/doxygen.dir/clean
 clean: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 clean: CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 clean: CMakeFiles/roscpp_generate_messages_py.dir/clean
+clean: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/sensor_msgs_generate_messages_eus.dir/clean
 clean: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/clean
 clean: CMakeFiles/roscpp_generate_messages_eus.dir/clean
@@ -108,7 +110,6 @@ clean: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
 clean: CMakeFiles/tf_generate_messages_cpp.dir/clean
 clean: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/tf_generate_messages_lisp.dir/clean
-clean: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/tf_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 clean: CMakeFiles/actionlib_generate_messages_eus.dir/clean
@@ -122,6 +123,7 @@ clean: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
 clean: CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/clean
 clean: CMakeFiles/tf2_msgs_generate_messages_lisp.dir/clean
 clean: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/clean
+clean: CMakeFiles/localize.dir/clean
 clean: gtest/clean
 
 .PHONY : clean
@@ -574,11 +576,18 @@ CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/std_msgs_generate_messages_cp
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/actionlib_generate_messages_cpp.dir/all
+CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/tf_generate_messages_eus.dir/all
+CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
+CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/actionlib_generate_messages_lisp.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/tf_generate_messages_eus.dir/all
+CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/webots_ros_generate_messages_cpp.dir/all
@@ -587,12 +596,6 @@ CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/webots_ros_generate_messages_
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/webots_ros_generate_messages_eus.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/actionlib_generate_messages_py.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
-CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
-CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
-CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
@@ -602,7 +605,6 @@ CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/geometry_msgs_generate_messag
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/tf_generate_messages_cpp.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/tf_generate_messages_lisp.dir/all
-CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/tf_generate_messages_nodejs.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
 CMakeFiles/dynamic_link_camera.dir/all: CMakeFiles/actionlib_generate_messages_eus.dir/all
@@ -906,6 +908,33 @@ roscpp_generate_messages_py: CMakeFiles/roscpp_generate_messages_py.dir/rule
 CMakeFiles/roscpp_generate_messages_py.dir/clean:
 	$(MAKE) -f CMakeFiles/roscpp_generate_messages_py.dir/build.make CMakeFiles/roscpp_generate_messages_py.dir/clean
 .PHONY : CMakeFiles/roscpp_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles 0
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# clean rule for target.
+CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/sensor_msgs_generate_messages_eus.dir
@@ -1394,33 +1423,6 @@ CMakeFiles/tf_generate_messages_lisp.dir/clean:
 .PHONY : CMakeFiles/tf_generate_messages_lisp.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_nodejs"
-.PHONY : CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles 0
-.PHONY : CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# clean rule for target.
-CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-.PHONY : CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/tf_generate_messages_nodejs.dir
 
 # All Build rule for target.
@@ -1568,11 +1570,18 @@ CMakeFiles/enable.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/actionlib_generate_messages_cpp.dir/all
+CMakeFiles/enable.dir/all: CMakeFiles/tf_generate_messages_eus.dir/all
+CMakeFiles/enable.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/enable.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+CMakeFiles/enable.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+CMakeFiles/enable.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
+CMakeFiles/enable.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/enable.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/actionlib_generate_messages_lisp.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/enable.dir/all: CMakeFiles/tf_generate_messages_eus.dir/all
+CMakeFiles/enable.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/webots_ros_generate_messages_cpp.dir/all
@@ -1581,12 +1590,6 @@ CMakeFiles/enable.dir/all: CMakeFiles/webots_ros_generate_messages_lisp.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/webots_ros_generate_messages_eus.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/actionlib_generate_messages_py.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-CMakeFiles/enable.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-CMakeFiles/enable.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
-CMakeFiles/enable.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-CMakeFiles/enable.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
-CMakeFiles/enable.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
-CMakeFiles/enable.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
@@ -1596,7 +1599,6 @@ CMakeFiles/enable.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/a
 CMakeFiles/enable.dir/all: CMakeFiles/tf_generate_messages_cpp.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/tf_generate_messages_lisp.dir/all
-CMakeFiles/enable.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/tf_generate_messages_nodejs.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
 CMakeFiles/enable.dir/all: CMakeFiles/actionlib_generate_messages_eus.dir/all
@@ -1819,6 +1821,82 @@ tf2_msgs_generate_messages_nodejs: CMakeFiles/tf2_msgs_generate_messages_nodejs.
 CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/clean:
 	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/clean
 .PHONY : CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/localize.dir
+
+# All Build rule for target.
+CMakeFiles/localize.dir/all: CMakeFiles/webots_ros_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/sensor_msgs_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf2_msgs_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/roscpp_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/roscpp_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/roscpp_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/sensor_msgs_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/roscpp_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/webots_ros_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/webots_ros_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/webots_ros_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf2_msgs_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/webots_ros_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf_generate_messages_py.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
+CMakeFiles/localize.dir/all: CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/all
+	$(MAKE) -f CMakeFiles/localize.dir/build.make CMakeFiles/localize.dir/depend
+	$(MAKE) -f CMakeFiles/localize.dir/build.make CMakeFiles/localize.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles --progress-num=13,14 "Built target localize"
+.PHONY : CMakeFiles/localize.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/localize.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/localize.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ale/CleaningRobot_RP/CleaningRobot_ws/build/bringup/CMakeFiles 0
+.PHONY : CMakeFiles/localize.dir/rule
+
+# Convenience name for target.
+localize: CMakeFiles/localize.dir/rule
+
+.PHONY : localize
+
+# clean rule for target.
+CMakeFiles/localize.dir/clean:
+	$(MAKE) -f CMakeFiles/localize.dir/build.make CMakeFiles/localize.dir/clean
+.PHONY : CMakeFiles/localize.dir/clean
 
 #=============================================================================
 # Target rules for target gtest/googlemock/CMakeFiles/gmock_main.dir
