@@ -60,39 +60,40 @@ void SensorEnable::teleop(int key){
     // DOWN 317
     // LEFT 314
     // RIGTH 316
-    // W 87
-    // A 65
-    // S 83
-    // D 68
+    // W 87         (77)
+    // A 65         (61)
+    // S 83         (73)
+    // D 68         (64)
     switch(key) {
+      // W
       case 87 :
         srv_act.request.value = 0.1;
         vec_velocity_[4].call(srv_act); // linear actuator
         srv_act.request.value = 0;
         vec_velocity_[5].call(srv_act); // rotary actuator
         break;
-
+      // S
       case 83 :
         srv_act.request.value = -0.1;
         vec_velocity_[4].call(srv_act);
         srv_act.request.value = 0;
         vec_velocity_[5].call(srv_act);
         break;
-
+      // A
       case 65 :
         srv_act.request.value = 0.4;
         vec_velocity_[5].call(srv_act);
         srv_act.request.value = 0;
         vec_velocity_[4].call(srv_act);
         break;
-
+      // D
       case 68 :
         srv_act.request.value = -0.4;
         vec_velocity_[5].call(srv_act);
         srv_act.request.value = 0;
         vec_velocity_[4].call(srv_act);
         break;
-
+      // UP
       case 315 :
         srv_act.request.value = 2.0;
         vec_velocity_[0].call(srv_act); 
@@ -105,6 +106,7 @@ void SensorEnable::teleop(int key){
         vec_velocity_[5].call(srv_act); // rotary actuator
         break;
 
+      // DOWN
       case 317 :
         srv_act.request.value = -2.0;
         vec_velocity_[0].call(srv_act);
@@ -117,6 +119,7 @@ void SensorEnable::teleop(int key){
         vec_velocity_[5].call(srv_act);
         break;
 
+      // RIGHT
       case 316 :
         srv_act.request.value = 1;
         vec_velocity_[0].call(srv_act);
@@ -130,6 +133,7 @@ void SensorEnable::teleop(int key){
         vec_velocity_[5].call(srv_act);
         break;
 
+      // LEFT
       case 314 :
         srv_act.request.value = -1;
         vec_velocity_[0].call(srv_act);
