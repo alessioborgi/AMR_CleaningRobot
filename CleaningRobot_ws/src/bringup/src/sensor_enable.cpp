@@ -95,7 +95,7 @@ void SensorEnable::teleop(int key){
         break;
       // UP
       case 315 :
-        srv_act.request.value = 2.0;
+        srv_act.request.value = 5.0;
         vec_velocity_[0].call(srv_act); 
         vec_velocity_[1].call(srv_act);
         vec_velocity_[2].call(srv_act);
