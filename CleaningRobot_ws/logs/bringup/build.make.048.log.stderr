@@ -1,3 +1,0 @@
-[01m[K/home/ale/CleaningRobot_RP/CleaningRobot_ws/src/bringup/src/sensor_enable.cpp:97:12:[m[K [01;35m[Kwarning: [m[Kmulti-character character constant [[01;35m[K-Wmultichar[m[K]
-   97 |       case [01;35m[K'ff52'[m[K :
-      |            [01;35m[K^~~~~~[m[K
