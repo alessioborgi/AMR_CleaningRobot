@@ -1,8 +1,3 @@
-Linked: (/home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup/share/bringup/cmake/bringupConfig.cmake, /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/share/bringup/cmake/bringupConfig.cmake)
-Linked: (/home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup/share/bringup/cmake/bringupConfig-version.cmake, /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/share/bringup/cmake/bringupConfig-version.cmake)
-Linked: (/home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup/lib/bringup/enable, /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/lib/bringup/enable)
-Linked: (/home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup/lib/bringup/dynamic_link_camera, /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/lib/bringup/dynamic_link_camera)
-Linked: (/home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/.private/bringup/lib/pkgconfig/bringup.pc, /home/ale/CleaningRobot_RP/CleaningRobot_ws/devel/lib/pkgconfig/bringup.pc)
 Could not clean linked files.
 Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/catkin_tools/execution/stages.py", line 177, in function_proxy
