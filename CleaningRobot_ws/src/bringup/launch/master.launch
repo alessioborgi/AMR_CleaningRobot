@@ -24,6 +24,6 @@
   <node name="Localization" pkg="bringup" type="localize" respawn="false" output="screen"/>
 
   <!-- MAP -->
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find bringup)/maps/home.yaml"/>
+  <!--<node name="map_server" pkg="map_server" type="map_server" args="$(find bringup)/maps/home.yaml"/> -->
   
 </launch>
