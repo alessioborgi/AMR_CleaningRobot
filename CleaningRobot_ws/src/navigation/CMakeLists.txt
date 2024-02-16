@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 2.8.3)
-project(bringup)
-set(CMAKE_CXX_STANDARD 11)
+cmake_minimum_required(VERSION 3.0.2)
+project(navigation)
+
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
@@ -8,12 +8,10 @@ set(CMAKE_CXX_STANDARD 11)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-rospy
 roscpp
 std_msgs
 webots_ros
 sensor_msgs
-geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -107,7 +105,7 @@ geometry_msgs
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES bringup
+#  LIBRARIES navigation
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -125,7 +123,7 @@ ${catkin_INCLUDE_DIRS}
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/bringup.cpp
+#   src/${PROJECT_NAME}/navigation.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -136,7 +134,7 @@ ${catkin_INCLUDE_DIRS}
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/bringup_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/navigation_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -200,7 +198,7 @@ ${catkin_INCLUDE_DIRS}
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_bringup.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_navigation.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
@@ -208,16 +206,6 @@ ${catkin_INCLUDE_DIRS}
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 
-# making executable of sensor enable.cpp namely "enable" which will be called in launch file.
-add_executable(enable src/sensor_enable.cpp)
-target_link_libraries(enable ${catkin_LIBRARIES})
-add_dependencies (enable ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-# making executable of static_camera.cpp namely "dynamic_link_camera" which will be called in launch file.
-add_executable(dynamic_link_camera src/static_camera.cpp)
-target_link_libraries(dynamic_link_camera ${catkin_LIBRARIES})
-add_dependencies (dynamic_link_camera ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-add_executable(localize src/localization.cpp)
-target_link_libraries(localize ${catkin_LIBRARIES})
-add_dependencies (localize ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_executable(remap src/remapping.cpp)
+# target_link_libraries(remap ${catkin_LIBRARIES})
+# add_dependencies (remap ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

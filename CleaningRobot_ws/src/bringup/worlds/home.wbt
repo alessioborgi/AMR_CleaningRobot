@@ -4,7 +4,7 @@ WorldInfo {
     "RoCKIn@Home"
   ]
   title "Home"
-  basicTimeStep 128
+  basicTimeStep 64
   optimalThreadCount 8
   coordinateSystem "NUE"
   lineScale 1
