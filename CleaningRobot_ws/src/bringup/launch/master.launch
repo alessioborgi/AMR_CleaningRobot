@@ -12,6 +12,7 @@
   
   <!-- MAP -->
   <node name="map_server" pkg="map_server" type="map_server" args="$(find bringup)/maps/home.yaml"/>
+  <node name="Remap" pkg="navigation" type="remap" respawn="false" output="screen"/>
 
   <!-- Dynamic transform -->
   <node name="Dynamic" pkg="bringup" type="dynamic_link_camera" respawn="false" output="screen"/>
