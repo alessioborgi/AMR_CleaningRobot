@@ -7,7 +7,7 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
 ## Instructions
 1. **Installations**
    - Ensure you have Ubuntu 20.04 installed on your system.
-   - Install ROS1 (Robot Operating System) following the instructions on the [official ROS website](https://www.ros.org/install/).
+   - Install ROS1 Noetic (Robot Operating System) following the instructions on the [official ROS website](https://www.ros.org/install/).
    - Install Webots R2021a from the [official website](https://cyberbotics.com/#download).
 
 2. **Workspace Setup:**
