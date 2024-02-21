@@ -4,6 +4,9 @@ simulationViewPerspectives: 000000ff000000010000000200000118000002a6010000000601
 sceneTreePerspectives: 000000ff000000010000000200000156000000fc0100000006010000000200
 maximizedDockId: -1
 centralWidgetVisible: 1
+projectionMode: PERSPECTIVE
+renderingMode: PLAIN
 orthographicViewHeight: 1
 textFiles: -1
+globalOptionalRendering: CoordinateSystem::LidarRaysPaths::DistanceSensorRays
 renderingDevicePerspectives: Cam_robot:CAM;1;0.734375;0;0
