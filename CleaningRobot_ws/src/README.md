@@ -1,8 +1,14 @@
 # Cleaning Robot Project
 #### @Alessio Borgi
 
+
+
+
 ## Introduction
 Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is designed to simulate a cleaning robot using the Robot Operating System (ROS), Webots, and Rviz on Ubuntu 20.04. The cleaning robot is capable of mapping its environment and autonomously planning and navigating through it to achieve predefined cleaning goals.
+
+
+
 
 ## Instructions
 1. **Installations**
@@ -35,6 +41,9 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
    - At this point two windows should be opened: one being Webots and the other being Rviz, through which you can monitor robot behavior and perform all the operations.
 
 
+
+
+
 ## Robot Structure & URDF
 The robot's body is a rectangular box capable of moving in four directions: front, back, left, and right. It is equipped with a Linear Actuator and a Rotary Actuator, both connected to a camera. This combination enables the robot to adjust the camera viewpoint vertically (up and down) and horizontally (left and right). Additionally, the robot is outfitted with two Distance Sensors, two GPS units, Lidar, and an IMU (Inertial Measurement Unit). It's important to note that the wheels, distance sensors, and other components are fixed relative to the center of the body box, essentially acting as fixed joints. Conversely, the camera mechanism, which moves relative to the body, is classified as a continuous joint.
 
@@ -52,6 +61,14 @@ We can verify that the whole Robot Setting opening a new terminal in the Workspa
 <div style="text-align: center">
   <img src="images/rqt_gui.png" alt="Screenshot" width="1200"/>
 </div>
+
+
+
+## TeleOp (Keyboard)
+The first functionality provided in this project is the **TeleOperation through the Keyboard**, allowing you to control your robot movements using keyboard inputs. This feature enables you to manually drive or manipulate your robot's movements and actions in real-time by sending commands via the keyboard.
+
+
+
 
 ## Functionalities
 The Cleaning Robot project enables the robot to autonomously map its environment using sensor data and create a map of the house. Once the map is created, the robot can plan efficient paths to navigate through the environment and achieve predefined cleaning goals. This project demonstrates the capabilities of modern cleaning robots and showcases the integration of ROS, Webots, and Rviz for robotic applications.
