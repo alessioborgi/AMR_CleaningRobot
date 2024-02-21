@@ -69,7 +69,7 @@ We can verify that the whole Robot Setting opening a new terminal in the Workspa
 The first functionality provided in this project is the **TeleOperation through the Keyboard**, allowing you to control your robot movements in the Home and also the Camera Orientation and Position using keyboard inputs. This feature enables you to manually drive or manipulate your robot's movements and actions in real-time by sending commands via the keyboard.
 
 <div style="text-align: center">
-  <img src="images/TeleOp" alt="Screenshot" width="1200"/>
+  <img src="images/TeleOp.png" alt="Screenshot" width="1200"/>
 </div>
 
 
