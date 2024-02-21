@@ -15,7 +15,7 @@
   <node name="Remap" pkg="navigation" type="remap" respawn="false" output="screen"/>
 
   <!-- Dynamic transform -->
-  <node name="Dynamic" pkg="brirobot_settingsngup" type="dynamic_link_camera" respawn="false" output="screen"/>
+  <node name="Dynamic" pkg="robot_settings" type="dynamic_link_camera" respawn="false" output="screen"/>
 
   <!-- URDF -->
   <include file="$(find robot_settings)/robot_description/launch/description.launch"/>
