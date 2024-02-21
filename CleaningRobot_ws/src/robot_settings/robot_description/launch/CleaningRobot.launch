@@ -1,4 +1,16 @@
 <?xml version="1.0"?>
+
+<!--
+
+File: CleaningRobot.launch
+Author: @AlessioBorgi
+Date: 07-02-2024
+
+Description: This is the secondary file handling the CleaningRobot file and the transformations that follow. 
+
+-->
+
+
 <launch>
 
   <!-- Open the model file -->

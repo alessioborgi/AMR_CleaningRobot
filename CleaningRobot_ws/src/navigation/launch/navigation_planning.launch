@@ -1,5 +1,15 @@
 <?xml version="1.0"?>
 
+<!--
+
+File: navigation_planning.launch
+Author: @AlessioBorgi
+Date: 20-02-2024
+
+Description: This is a secondary file that handles the local and global costmap parameters,together with thei planners. 
+
+-->
+
 <launch>
 
    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">

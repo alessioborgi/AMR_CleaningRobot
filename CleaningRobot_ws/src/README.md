@@ -48,6 +48,10 @@ The Robot Structure description is physically described using the **URDF (“Uni
   <img src="images/Robot_URDF_Scheme.png" alt="Screenshot" width="1200"/>
 </div>
 
+<div style="text-align: center">
+  <img src="images/rqt_gui.png" alt="Screenshot" width="1200"/>
+</div>
+
 ## Functionalities
 The Cleaning Robot project enables the robot to autonomously map its environment using sensor data and create a map of the house. Once the map is created, the robot can plan efficient paths to navigate through the environment and achieve predefined cleaning goals. This project demonstrates the capabilities of modern cleaning robots and showcases the integration of ROS, Webots, and Rviz for robotic applications.
 
