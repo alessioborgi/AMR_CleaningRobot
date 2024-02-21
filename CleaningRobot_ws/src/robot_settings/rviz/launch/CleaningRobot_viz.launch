@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!--
+
+File: CleaningRobot_viz.launch
+Author: @AlessioBorgi
+Date: 07-02-2024
+
+Description: This file is used to launch the Rviz Visualization of the Robot. 
+
+-->
+
+<launch>
+
+  <!-- Launchin Rviz: Obtaining the visualization for the Robot. -->
+  <arg name="rvizconfig" default="$(find navigation)/rviz/nav.rviz" />
+
+  <!-- Rviz Node-->
+  <node name="$(anon name)" pkg="rviz" type="rviz" args="-d $(arg rvizconfig) -f map" required="true" />
+
+</launch>

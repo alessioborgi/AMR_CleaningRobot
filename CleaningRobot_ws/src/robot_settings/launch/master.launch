@@ -24,7 +24,7 @@ Description: This is the major file (like a "main") that should be launched to s
   <include file="$(find robot_settings)/robot_description/launch/CleaningRobot.launch"/>
 
   <!-- Rviz Cleaning Robot-->
-	<include file="$(find robot_settings)/visualization/launch/CleaningRobot_viz.launch"/>
+	<include file="$(find robot_settings)/rviz/launch/CleaningRobot_viz.launch"/>
 
   <!-- Rviz Navigation and Planning-->
   <include file="$(find navigation)/launch/navigation_planning.launch"/>

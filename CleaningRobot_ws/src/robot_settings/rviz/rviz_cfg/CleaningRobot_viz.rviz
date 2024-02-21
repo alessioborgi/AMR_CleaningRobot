@@ -1,3 +1,10 @@
+
+#File: CleaningRobot.launch
+#Author: @AlessioBorgi
+#Date: 07-02-2024
+
+#Description: This is the file handling the CleaningRobot environment settings in Rviz. 
+
 Panels:
   - Class: rviz/Displays
     Help Height: 78

@@ -13,11 +13,12 @@ Description: This is the secondary file handling the CleaningRobot file and the 
 
 <launch>
 
-  <!-- Open the model file -->
+  <!-- Pushing the URDF to the Parameter Server: Convert the xacro file into URDF and place it into the Parameter Server. -->
   <arg name="CleaningRobot_xacro" default="$(find robot_settings)/robot_description/urdf/CleaningRobot.xacro"/>
   <param name="robot_description" command="$(find xacro)/xacro '$(arg CleaningRobot_xacro)'"/>
 
-  <!-- Add the transformations -->
+  <!-- Transformation Node: This will extract the URDF file from the Parameter Server and broadcast the 3D Pose of the Robot to the 
+                            transform library in ROS. -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
 </launch>

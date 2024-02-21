@@ -6,7 +6,7 @@ File: CleaningRobot.xacro
 Author: @AlessioBorgi
 Date: 07-02-2024
 
-Description: Xacro file that physically describe the Robot that will be interpreted by ROS.
+Description: Xacro file that physically describe the Robot that will be interpreted by ROS. It's like a kinematic description of the Robot.
 
 -->
 
