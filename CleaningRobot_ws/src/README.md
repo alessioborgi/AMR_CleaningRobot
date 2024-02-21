@@ -72,6 +72,11 @@ The first functionality provided in this project is the **TeleOperation through 
   <img src="images/TeleOp.png" alt="Screenshot" width="1200"/>
 </div>
 
+Notice that you can also monitor the TeleOperation Topic by, while the Project is running, do:
+- Open another Terminal and type the command `rostopic list`.
+- From this list, one of these has this form `/Cam_robot_xxxxxx_NameOfYourMachine` with `xxxxxx` changing at each master.launch.
+- Save this result and now type the command `rostopic echo /Cam_robot_xxxxxx_NameOfYourMachine/keyboard/key`.
+At this point, the Terminal should echo the keyboard keys it receives as input. 
 
 
 ## Functionalities
