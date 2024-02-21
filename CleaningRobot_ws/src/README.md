@@ -16,7 +16,9 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
    - Create inside the project folder a Workspace and a `src` folder inside it, using the command `mkdir -p CleaningRobot_ws/src`.
    - Go inside the `src` folder of the Workspace using `cd CleaningRobot_ws/src`.
    - Clone this repository inside the `src` folder using the command `git clone `.
-   
+   - Configure ROS environment variables using the `source` command.
+   - Open Webots and load the provided robot simulation environment.
+
 3. **Launching the Project:**
    - Go inside the Workspace folder using the command `cd nameFolder/CleaningRobot_ws`.
    - Build the whole Cleaning Robot Project using `catkin build`.
