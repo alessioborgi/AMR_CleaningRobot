@@ -42,12 +42,13 @@ The robot's body is a rectangular box capable of moving in four directions: fron
   <img src="images/Robot_Image.jpg" alt="Screenshot" width="1200"/>
 </div>
 
-The Robot Structure description is physically described using the **URDF (“Unified Robot Description Format”)**, being the way to physically describe the Robot to ROS. In summary, fixed parts are connected using fixed joints, while the linear_actuator (which can move up and down) and the camera_link (which can rotate over itself), are linked using a continuous joint. Also, the Navigation is classified as a dynamic/continuous joint. 
+The Robot Structure description is physically described using the **URDF (“Unified Robot Description Format”)**, being the way to physically describe the Robot to ROS. In summary, fixed parts are connected using fixed joints, while the linear_actuator (which can move up and down) and the camera_link (which can rotate over itself), are linked using a continuous joint. Also, the Navigation is classified as a dynamic/continuous joint. This is equivalent to passing local parameters to methods. Indeed, the robot_description package converts the “CleaningRobot.xacro” file in the URDF,  and places it into the Parameter Server. The “robot_state_publisher” robot node, will then extract the URDF file from the  Parameter Server and broadcast the 3D pose of the robot link to the transform library in ROS. 
  
 <div style="text-align: center">
   <img src="images/Robot_URDF_Scheme.png" alt="Screenshot" width="1200"/>
 </div>
 
+We can verify that the whole Robot Setting opening a new terminal in the Workspace folder and to ask for the `rqt_gui`, using the following command: `rosrun rqt_gui rqt_gui`. If the project is correctly working, you will have the following: 
 <div style="text-align: center">
   <img src="images/rqt_gui.png" alt="Screenshot" width="1200"/>
 </div>
