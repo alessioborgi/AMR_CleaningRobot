@@ -42,7 +42,8 @@ The robot's body is a rectangular box capable of moving in four directions: fron
   <img src="images/Robot_Image.jpg" alt="Screenshot" width="1200"/>
 </div>
 
-The Robot Structure description is physically described using the **URDF (“Unified Robot Description Format”)**, being the way to physically describe the Robot to ROS.
+The Robot Structure description is physically described using the **URDF (“Unified Robot Description Format”)**, being the way to physically describe the Robot to ROS. In summary, fixed parts are connected using fixed joints, while the linear_actuator (which can move up and down) and the camera_link (which can rotate over itself), are linked using a continuous joint.
+ 
 <div style="text-align: center">
   <img src="images/Robot_URDF_Scheme.png" alt="Screenshot" width="1200"/>
 </div>
