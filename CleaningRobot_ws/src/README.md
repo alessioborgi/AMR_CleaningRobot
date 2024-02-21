@@ -7,7 +7,7 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
 ## Instructions:
 1. **Installations**
    - Ensure you have Ubuntu 20.04 installed on your system.
-   - Install ROS (Robot Operating System) following the instructions on the [official ROS website](https://www.ros.org/install/).
+   - Install ROS1 (Robot Operating System) following the instructions on the [official ROS website](https://www.ros.org/install/).
    - Install Webots R2021a from the [official website](https://cyberbotics.com/#download).
 
 2. **Workspace Setup:**
@@ -16,17 +16,13 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
    - Create inside the project folder a Workspace and a `src` folder inside it, using the command `mkdir -p CleaningRobot_ws/src`.
    - Go inside the `src` folder of the Workspace using `cd CleaningRobot_ws/src`.
    - Clone this repository inside the `src` folder using the command `git clone `.
-   - Configure ROS environment variables using the `source` command.
-   - Open Webots and load the provided robot simulation environment.
-
+   
 3. **Launching the Project:**
-   - Launch ROS nodes using the provided launch files.
-   - Monitor robot behavior and visualization using Rviz.
-
-4. **Operation:**
-   - Follow the on-screen instructions to interact with the cleaning robot.
-   - Use Rviz to visualize the robot's sensor data, maps, and planned paths.
-   - Experiment with different cleaning goals and observe the robot's autonomous navigation.
+   - Go inside the Workspace folder using the command `cd nameFolder/CleaningRobot_ws`.
+   - Build the whole Cleaning Robot Project using `catkin build`.
+   - Configure ROS environment variables using the `source devel/setup.bash` command.
+   - Launch the whole project using `roslaunch robot_settings master.launch`.
+   - At this point two windows should be opened: one being Webots and the other being Rviz, through which you can monitor robot behavior and perform all the operations.
 
 ## Functionality:
 The Cleaning Robot project enables the robot to autonomously map its environment using sensor data and create a map of the house. Once the map is created, the robot can plan efficient paths to navigate through the environment and achieve predefined cleaning goals. This project demonstrates the capabilities of modern cleaning robots and showcases the integration of ROS, Webots, and Rviz for robotic applications.
