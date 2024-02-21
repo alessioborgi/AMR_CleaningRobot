@@ -58,6 +58,7 @@ The Robot Structure description is physically described using the **URDF (“Uni
 </div>
 
 We can verify that the whole Robot Setting opening a new terminal in the Workspace folder and to ask for the `rqt_gui`, using the following command: `rosrun rqt_gui rqt_gui`. If the project is correctly working, you will have the following: 
+
 <div style="text-align: center">
   <img src="images/rqt_gui.png" alt="Screenshot" width="1200"/>
 </div>
@@ -65,8 +66,11 @@ We can verify that the whole Robot Setting opening a new terminal in the Workspa
 
 
 ## TeleOp (Keyboard)
-The first functionality provided in this project is the **TeleOperation through the Keyboard**, allowing you to control your robot movements using keyboard inputs. This feature enables you to manually drive or manipulate your robot's movements and actions in real-time by sending commands via the keyboard.
+The first functionality provided in this project is the **TeleOperation through the Keyboard**, allowing you to control your robot movements in the Home and also the Camera Orientation and Position using keyboard inputs. This feature enables you to manually drive or manipulate your robot's movements and actions in real-time by sending commands via the keyboard.
 
+<div style="text-align: center">
+  <img src="images/TeleOp" alt="Screenshot" width="1200"/>
+</div>
 
 
 
