@@ -2,8 +2,8 @@
 <launch>
 
   <!-- Open the model file -->
-  <arg name="4wheelrobot_xacro" default="$(find robot_settings)/robot_description/urdf/4wheelrobot.xacro"/>
-  <param name="robot_description" command="$(find xacro)/xacro '$(arg 4wheelrobot_xacro)'"/>
+  <arg name="CleaningRobot_xacro" default="$(find robot_settings)/robot_description/urdf/CleaningRobot.xacro"/>
+  <param name="robot_description" command="$(find xacro)/xacro '$(arg CleaningRobot_xacro)'"/>
 
   <!-- Add the transformations -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />

@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+
+<!--
+
+File: CleaningRobot.xacro
+Author: @AlessioBorgi
+Date: 07-02-2024
+
+Description: Xacro file that physically describe the Robot that will be interpreted by ROS.
+
+-->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="CleaningRobot">
+
+
+  <!-- Color Macros: Initialize a pair of colors to be used in the different Robot parts. -->
+  <material name="red">
+    <color rgba="1.0 0.5 0.5 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.3 0.57 1. 1."/>
+  </material>
+
+
+  <!-- Body and Wheels Properties -->
+  <xacro:property name="body_length" value="0.2" />
+  <xacro:property name="body_width" value="0.1" />
+  <xacro:property name="body_height" value="0.05" />
+  <xacro:property name="ground_offset" value="0.04" />
+  
+  <xacro:property name="wheelbase" value="0.1" />
+  <xacro:property name="wheel_radius" value="0.04" />
+  <xacro:property name="wheel_length" value="0.02" />
+
+
+  <!-- Base Link Definition -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="${body_length} ${body_width} ${body_height}"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+        <origin xyz="${wheelbase/2} 0 ${ground_offset+body_height/2}" />
+        <geometry>
+          <box size="${body_length} ${body_width} ${body_height}"/>
+        </geometry>
+    </collision>
+  </link>
+
+
+
+
+
+
+
+
+
+
+  <!-- FIXED JOINTS-->
+
+  <!-- 1.a) Distance Sensor Left-->
+  <link name="left_distance_sensor">
+  </link>
+  <joint name="base_to_left_distance_sensor" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_distance_sensor"/>
+    <origin xyz="0.1 0.02 0" rpy="0 0 0.3"/>
+  </joint>
+
+  <!-- 1.b) Distance Sensor Right-->
+  <link name="right_distance_sensor">
+  </link>
+  <joint name="base_to_right_distance_sensor" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_distance_sensor"/>
+    <origin xyz="0.1 -0.02 0" rpy="0 0 -0.3"/>
+  </joint>
+
+  <!-- 2) Rotary Actuator -->
+  <link name="rotary_link">
+  </link>
+  <joint name="linear_to_rotary_link" type="fixed">
+    <parent link="linear_link"/>
+    <child link="rotary_link"/>
+    <origin xyz="0 -0.15 0" rpy="0 0 3.142"/>
+  </joint>
+
+  <!-- 3) Lidar -->
+  <link name="lidar">
+  </link>
+  <joint name="base_to_lidar" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar"/>
+    <origin xyz="0 0 0.06"/>
+  </joint>
+  
+  <!-- 4) IMU-->
+  <link name="imu">
+  </link>
+  <joint name="base_to_imu" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+  <!-- 5) GPS-->
+  <link name="gps">
+  </link>
+  <joint name="base_to_gps" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps"/>
+    <origin xyz="0 0 0"/>
+  </joint>
+
+
+  <!-- 6.a) Front Left Wheel-->
+  <link name="front_left_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="${pi/2} 0 0"/>
+    </visual>
+  </link>
+  <joint name="base_to_front_left_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_left_wheel"/>
+    <origin xyz="0.06 0.06 0"/>
+  </joint>
+
+
+  <!-- 6.b) Front Right Wheel -->
+  <link name="front_right_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="${pi/2} 0 0"/>
+    </visual>
+  </link>
+  <joint name="base_to_front_right_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_right_wheel"/>
+    <origin xyz="0.06 -0.06 0"/>
+  </joint>
+
+
+  <!-- 6.c) Back Left Wheel-->
+  <link name="back_left_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="${pi/2} 0 0"/>
+    </visual>
+  </link>
+  <joint name="base_to_back_left_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_left_wheel"/>
+    <origin xyz="-0.06 0.06 0"/>
+  </joint>
+
+
+  <!-- 6.d) Back Right Wheel-->
+  <link name="back_right_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="${wheel_radius}" length="${wheel_length}"/>
+      </geometry>
+      <material name="red"/>
+      <origin rpy="${pi/2} 0 0"/>
+    </visual>
+  </link>
+  <joint name="base_to_back_right_wheel" type="fixed">
+    <parent link="base_link"/>
+    <child link="back_right_wheel"/>
+    <origin xyz="-0.06 -0.06 0"/>
+  </joint>
+
+  
+
+
+
+
+
+
+
+
+  <!-- DYNAMIC(CONTINUOUS) JOINTS-->
+  <!-- 7) Linear Actuator -->
+  <link name="linear_link">
+  </link>
+  <joint name="base_to_linear_link" type="continuous">
+    <parent link="base_link"/>
+    <child link="linear_link"/>
+  </joint>
+
+  <!-- 8) Camera Actuator -->
+  <link name="camera_link">
+  </link>
+  <joint name="rotary_to_camera_link" type="continuous">
+    <parent link="rotary_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <!-- 9) Navigation Link -->
+  <link name="nav_link">
+  </link>
+  <joint name="base_to_nav_link" type="continuous">
+    <parent link="base_link"/>
+    <child link="nav_link"/>
+  </joint>
+
+</robot>

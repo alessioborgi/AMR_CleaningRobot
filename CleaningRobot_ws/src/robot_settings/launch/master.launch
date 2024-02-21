@@ -21,7 +21,7 @@
   <include file="$(find robot_settings)/robot_description/launch/description.launch"/>
 
   <!-- Rviz -->
-	<include file="$(find robot_settings)/visualization/launch/4wheelrobot_viz.launch"/>
+	<include file="$(find robot_settings)/visualization/launch/CleaningRobot_viz.launch"/>
   
   <!-- Localization -->
   <node name="Localization" pkg="robot_settings" type="localize" respawn="false" output="screen"/>
