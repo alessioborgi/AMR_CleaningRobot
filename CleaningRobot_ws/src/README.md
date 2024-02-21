@@ -38,13 +38,13 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
 ## Robot Structure & URDF
 The robot's body is a rectangular box capable of moving in four directions: front, back, left, and right. It is equipped with a Linear Actuator and a Rotary Actuator, both connected to a camera. This combination enables the robot to adjust the camera viewpoint vertically (up and down) and horizontally (left and right). Additionally, the robot is outfitted with two Distance Sensors, two GPS units, Lidar, and an IMU (Inertial Measurement Unit). It's important to note that the wheels, distance sensors, and other components are fixed relative to the center of the body box, essentially acting as fixed joints. Conversely, the camera mechanism, which moves relative to the body, is classified as a continuous joint.
 
-<div style="text-align:center">
+<div style="text-align: center">
   <img src="images/Robot_Image.jpg" alt="Screenshot" width="800"/>
 </div>
 
 The Robot Structure description is physically described using the **URDF (“Unified Robot Description Format”)**, being the way to physically describe the Robot to ROS.
-<div style="text-align:center">
-  <img src="images/Robot_URDF_Scheme.png" alt="Screenshot" width="800"/>
+<div style="text-align: center">
+  <img src="images/Robot_URDF_Scheme.png" alt="Screenshot" width="1200"/>
 </div>
 
 ## Functionalities
