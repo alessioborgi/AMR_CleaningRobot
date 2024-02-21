@@ -1,20 +1,33 @@
 #include <sensor_enable.h>
 
+/*
+
+File: sensor_enable.cpp
+Author: @AlessioBorgi
+Date: 10-02-2024
+
+Description: This file contains the implementation for the Enable Sensors Class. 
+
+*/
+
+// Constructor of SensorEnable class
 SensorEnable::SensorEnable(ros::NodeHandle* nodehandle):nh_(*nodehandle){
+    // Initialize service requests
     srv_timestep.request.value = TIME_STEP; // for all sensors
     srv_inf.request.value = INFINITY; // for all positions of motors.
     srv_zero.request.value = 0.0; // for all velocity of motors.
 
-    std::cout<<srv_timestep.request.value<<std::endl;
+    // Subscribe to topics for enabling sensors
     subscribe_name_ = nh_.subscribe("/model_name", 1, &SensorEnable::NameCallBack,this); // inorder to enable many sensors with services.
     subscribe_cmd_vel_ = nh_.subscribe("/cmd_vel", 1, &SensorEnable::CmdvelCallBack,this);
-
-
 }
 
+// Callback function for /cmd_vel topic
 void SensorEnable::CmdvelCallBack(const geometry_msgs::Twist& msg){
+  // Extract linear and angular velocities
   linear_vel = msg.linear.x;
   angular_vel = msg.angular.z;
+  // Calculate wheel velocities
   srv_act.request.value = (linear_vel - angular_vel*WHEEL_BASE)/WHEEL_RADIUS;
   vec_velocity_[0].call(srv_act);
   vec_velocity_[2].call(srv_act);
@@ -23,20 +36,28 @@ void SensorEnable::CmdvelCallBack(const geometry_msgs::Twist& msg){
   vec_velocity_[3].call(srv_act);
 }
 
+// Callback function for /model_name topic
 void SensorEnable::NameCallBack(const std_msgs::String& msg){
+    // Get robot name
     SensorEnable::robot_name_ = msg.data;
+    // Initialize sensors
     Initialize_sensors();
 }
 
+// Initialize sensors
 void SensorEnable::Initialize_sensors(){
+    // List of sensors
     std::vector<std::string> sensors{"/CAM" , "/Lidar" ,"/ds_left" , "/ds_right" , "/keyboard" , "/global" , "/IMU" , "/Linear_sensor" , "/Rotation_sensor"};
     std::vector<ros::ServiceClient> vec_client; 
+    // Enable sensors using services
     for (auto sensor = sensors.begin(); sensor != sensors.end(); ++sensor){
         vec_client.push_back(nh_.serviceClient<webots_ros::set_int>(SensorEnable::robot_name_+ *sensor +"/enable")); // service name
         ros::service::waitForService(SensorEnable::robot_name_ + *sensor + "/enable");
         vec_client.back().call(srv_timestep); // enable with the timestep
     }
+    // Subscribe to keyboard topic
     subscribe_keyboard_ = nh_.subscribe(SensorEnable::robot_name_+"/keyboard/key", 1, &SensorEnable::KeyboardCallBack,this);
+    // List of actuators
     std::vector<std::string> actuators{"/wheel1" , "/wheel2" ,"/wheel3" , "/wheel4" , "/linear" , "/RM"};
     
     for (auto actuator = actuators.begin(); actuator != actuators.end(); ++actuator){
@@ -51,19 +72,15 @@ void SensorEnable::Initialize_sensors(){
     }
 }
 
+// Callback function for /keyboard/key topic
 void SensorEnable::KeyboardCallBack(const webots_ros::Int32Stamped& msg){
+    // Handle keyboard input
     teleop(msg.data);
 }
 
+// Handle teleoperation based on keyboard input
 void SensorEnable::teleop(int key){
-    // UP 315
-    // DOWN 317
-    // LEFT 314
-    // RIGTH 316
-    // W 87
-    // A 65
-    // S 83
-    // D 68
+    // Switch case based on keyboard input
     switch(key) {
       case 87 :
         srv_act.request.value = 0.1;
@@ -153,8 +170,9 @@ void SensorEnable::teleop(int key){
         vec_velocity_[5].call(srv_act);
    }
     std::cout<<key<<std::endl;
-
 }
+     
+      
 
 int main(int argc, char **argv){
     ros::init(argc, argv, "sensor_enable");
