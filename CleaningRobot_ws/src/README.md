@@ -2,16 +2,20 @@
 #### @Alessio Borgi
 
 ## Introduction:
-Welcome to the Cleaning Robot project! This project is designed to simulate a cleaning robot using the Robot Operating System (ROS), Webots, and Rviz on Ubuntu 20.04. The cleaning robot is capable of mapping its environment and autonomously planning and navigating through it to achieve predefined cleaning goals.
+Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is designed to simulate a cleaning robot using the Robot Operating System (ROS), Webots, and Rviz on Ubuntu 20.04. The cleaning robot is capable of mapping its environment and autonomously planning and navigating through it to achieve predefined cleaning goals.
 
 ## Instructions:
-1. **Installation:**
+1. **Installations**
    - Ensure you have Ubuntu 20.04 installed on your system.
    - Install ROS (Robot Operating System) following the instructions on the [official ROS website](https://www.ros.org/install/).
-   - Install Webots from the [official website](https://cyberbotics.com/#download).
-   - Clone this repository to your local machine.
+   - Install Webots R2021a from the [official website](https://cyberbotics.com/#download).
 
-2. **Setup:**
+2. **Workspace Setup:**
+   - Create a project folder using a command like `mkdir nameFolder`.
+   - Go inside the project folder typing `cd nameFolder`.
+   - Create inside the project folder a Workspace and a `src` folder inside it, using the command `mkdir -p CleaningRobot_ws/src`.
+   - Go inside the `src` folder of the Workspace using `cd CleaningRobot_ws/src`.
+   - Clone this repository inside the `src` folder using the command `git clone `.
    - Configure ROS environment variables using the `source` command.
    - Open Webots and load the provided robot simulation environment.
 
