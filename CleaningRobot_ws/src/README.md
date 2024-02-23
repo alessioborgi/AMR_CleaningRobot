@@ -42,7 +42,7 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
 
 
 ## Home Environment
-The Cleaning Robot will be inside the following Home, designed in WeBots.
+The Cleaning Robot will work and perform its tasks in a WeBots' Home, with the following graphical representation, allowing you to both see the top-view of the robot in the house, but also the robot's point of view, thanks to the top-left Camera-viewpoint.  
 
 <div style="text-align: center">
   <img src="images/Home.png" alt="Screenshot" width="1200"/>
