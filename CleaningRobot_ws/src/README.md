@@ -106,10 +106,11 @@ Here it is the Video of the SLAM building.
 
 <div style="text-align: center">
   <video width="1200" controls>
-    <source src="[video/video.mp4](https://www.youtube.com/watch?v=iSu1aiwxvLg)" type="video/mp4">
+    <source src="https://www.youtube.com/watch?v=iSu1aiwxvLg" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
+
 
 
 ### Saving the Map
