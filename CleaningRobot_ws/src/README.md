@@ -61,7 +61,6 @@ The Robot Structure description is physically described using the **URDF (“Uni
 <div style="text-align: center">
   <img src="images/Robot_URDF_Scheme.png" alt="Screenshot" width="1200"/>
 </div>
-
 We can verify that the whole Robot Setting opening a new terminal in the Workspace folder and to ask for the `rqt_gui`, using the following command: `rosrun rqt_gui rqt_gui`. If the project is correctly working, you will have the following: 
 
 <div style="text-align: center">
@@ -110,7 +109,7 @@ Here it is the Video of the SLAM building.
   </video>
 </div>
 
-[![Video Label](images/SLAM-Building-Rec.mp4)](images/SLAM-Building-Rec.mp4)
+[![Video Label](https://www.youtube.com/watch?v=iSu1aiwxvLg)](https://www.youtube.com/watch?v=iSu1aiwxvLg)
 
 
 ### Saving the Map
