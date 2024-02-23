@@ -1,5 +1,5 @@
 # Cleaning Robot Project
-#### @Alessio Borgi
+#### Copyright © 2024 Alessio Borgi
 
 
 
@@ -41,7 +41,12 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
    - At this point two windows should be opened: one being Webots and the other being Rviz, through which you can monitor robot behavior and perform all the operations.
 
 
+## Home Environment
+The Cleaning Robot will be inside the following Home, designed in WeBots.
 
+<div style="text-align: center">
+  <img src="images/Home.png" alt="Screenshot" width="1200"/>
+</div>
 
 
 ## Robot Structure & URDF
@@ -79,6 +84,31 @@ Notice that you can also monitor the TeleOperation Topic by, while the Project i
 At this point, the Terminal should echo the keyboard keys it receives as input. 
 
 
+## SLAM (Simultaneous Localization and Mapping) with GMapping
+Another project functionality is the ability to perform **SLAM ("Simultaneous Localization and Mapping")** task, consisting in having the Robot that creates a map of the environment it needs to operate into and, in parallel, estimate the position and orientation in that built map (i.e., Localization). This is achieved by merging the sensed results obtained from the diverse sensors mounted on the robot. 
+
+The package used for this task implementation is **GMapping**, implemented using the SLAM Algorithm called **Rao-Blackwellized Particle Filter**. This algorithm combines the advantages of particle filtering with those of Kalman filtering to provide an accurate and efficient estimation of a robot's pose and the map of its environment. By maintaining a set of particles representing different hypotheses about the robot's pose, and using a Kalman filter for each particle to estimate the map, the algorithm achieves a high degree of accuracy while remaining computationally tractable. Gmapping proposes an approach to compute an accurate proposal distribution taking into account not only the movement of the robot but also the most recent observation. This drastically decreases the uncertainty about the robot’s pose in the prediction step of the filter. The input that GMapping uses is **Raw Laser Data + Odometry**, used by the algorithm to estimate the Robot Pose w.r.t. the odometry, providing a map to Odom_link as an output. The other crucial output is the map or a 2D occupancy grid, being a representation of the environment, displaying the obstacles and the free spaces that have been scanned. 
+
+In order to perform another **Simultaneous Localization and Mapping** of your house or whatever place you decide to employ the robot, you will need to checkout to the other branch present in this repo called `SLAM_Building` by using the command `git checkout SLAM_Building` in the workspace folder. In this way, the project will be redirected to the version of the project where SLAM is available, since in the master branch, there is the already saved image Home Map. 
+
+To run it, then, we will have to open two terminals in the workspace:
+- Terminal 1: 
+   - Build the Project using `catkin build`.
+   - Re-source the project with `source devel/setup.bash`.
+   - Launch the master by using `roslaunch bringup master.launch`.
+- Terminal 2:
+   - Initialize the GMapping Node with "rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0", with the precise name of the Cam_robot_xxxxxx_... taken by doing "rostopic list". 
+
+
+
+
+This map can be saved using the **Map Server** Ros Package and can be used for Navigational purposes. In the representation, we need to describe some transforms: the *Base_Link*, is the center of the robot and is the Robot's most important base frame. The robot *Laser_link* frame, can be anywhere w.r.t. the robot, maintaining a Static Relationship to the base link and providing distances based on the time of light technique. This information allows the robot not only to compute the map but also to estimate the Robot's position.
+Laser sensors and wheel encoders are instead used to estimate the Base_link to Odom transform. 
+
+In addition to this information, GMapping keeps track also of coordinates frame over time parameters such as wheel sleepage, robot speed, frequency of map update, etc…. Since single sensor measurements could produce noisy results, it performs also **Corrections**, by continuously merging the measurements coming from the various sensors. The data collected from the robot are data passed to the robot that contains data being discretized into a matrix of cells, where each cell is assigned a value that represents the probability that the cell is occupied by an obstacle. 
+
+
+   
 ## Functionalities
 The Cleaning Robot project enables the robot to autonomously map its environment using sensor data and create a map of the house. Once the map is created, the robot can plan efficient paths to navigate through the environment and achieve predefined cleaning goals. This project demonstrates the capabilities of modern cleaning robots and showcases the integration of ROS, Webots, and Rviz for robotic applications.
 
