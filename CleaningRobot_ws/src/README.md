@@ -103,14 +103,10 @@ To run it, then, we will have to open two terminals in the workspace:
    - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`. 
 
 ### Saving the Map
-This map can be saved using the **Map Server** Ros Package and can be used for Navigational purposes. In the representation, we need to describe some transforms: the *Base_Link*, is the center of the robot and is the Robot's most important base frame. The robot *Laser_link* frame, can be anywhere w.r.t. the robot, maintaining a Static Relationship to the base link and providing distances based on the time of light technique. This information allows the robot not only to compute the map but also to estimate the Robot's position.
-Laser sensors and wheel encoders are instead used to estimate the Base_link to Odom transform. 
+This map can be saved using the **Map Server** Ros Package and can be used for Navigational purposes. The following, can be achieved by typing in a new Terminal the following 	`rosrun map_server map_saver -f  src/robot_settings/maps/map`. 
 
-In addition to this information, GMapping keeps track also of coordinates frame over time parameters such as wheel sleepage, robot speed, frequency of map update, etc…. Since single sensor measurements could produce noisy results, it performs also **Corrections**, by continuously merging the measurements coming from the various sensors. The data collected from the robot are data passed to the robot that contains data being discretized into a matrix of cells, where each cell is assigned a value that represents the probability that the cell is occupied by an obstacle. 
+The result that we will obtain in the folder is like the following.
+<div style="text-align: center">
+  <img src="images/SLAM_result.png" alt="Screenshot" width="1200"/>
+</div>
 
-
-   
-## Functionalities
-The Cleaning Robot project enables the robot to autonomously map its environment using sensor data and create a map of the house. Once the map is created, the robot can plan efficient paths to navigate through the environment and achieve predefined cleaning goals. This project demonstrates the capabilities of modern cleaning robots and showcases the integration of ROS, Webots, and Rviz for robotic applications.
-
-Feel free to explore and modify the project to suit your needs and experiment with different robot behaviors and configurations. Happy cleaning!
