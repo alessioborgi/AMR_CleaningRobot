@@ -105,7 +105,7 @@ To run it, then, we will have to open two terminals in the workspace:
 Here it is the Video of the SLAM building.
 <div style="text-align: center">
   <video width="1200" controls>
-    <source src="images/SLAM_Building_Rec.mp4" type="video/mp4">
+    <source src="images/SLAM-Building-Rec.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
