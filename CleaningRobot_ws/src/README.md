@@ -110,6 +110,9 @@ Here it is the Video of the SLAM building.
   </video>
 </div>
 
+[![Video Label](images/SLAM-Building-Rec.mp4)](images/SLAM-Building-Rec.mp4)
+
+
 ### Saving the Map
 This map can be saved using the **Map Server** Ros Package and can be used for Navigational purposes. The following, can be achieved by typing in a new Terminal the following 	`rosrun map_server map_saver -f  src/robot_settings/maps/map`. 
 
