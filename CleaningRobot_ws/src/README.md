@@ -102,15 +102,7 @@ To run it, then, we will have to open two terminals in the workspace:
    - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`.
  
 Here it is the Video of the SLAM building.
-<div style="text-align: center">
-  <video width="1200" controls>
-    <source src="images/SLAM-Building-Rec.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
-
-[![Video Label](https://www.youtube.com/watch?v=iSu1aiwxvLg)](https://www.youtube.com/watch?v=iSu1aiwxvLg)
-
+[Video Label](https://www.youtube.com/watch?v=iSu1aiwxvLg) 
 
 ### Saving the Map
 This map can be saved using the **Map Server** Ros Package and can be used for Navigational purposes. The following, can be achieved by typing in a new Terminal the following 	`rosrun map_server map_saver -f  src/robot_settings/maps/map`. 
