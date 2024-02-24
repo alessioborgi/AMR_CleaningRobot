@@ -110,6 +110,13 @@ Here it is the Video of the SLAM building.
 
 
 
+<div style="position: relative; text-align: center;">
+  <a href="https://www.youtube.com/your-video-link" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+    Watch Video
+  </a>
+  <img src="images/TeleOp.png" alt="Screenshot" width="1200" style="display: block; margin: 0 auto;">
+</div>
+
 
 ### Saving the Map
 This map can be saved using the **Map Server** Ros Package and can be used for Navigational purposes. The following, can be achieved by typing in a new Terminal the following 	`rosrun map_server map_saver -f  src/robot_settings/maps/map`. 
