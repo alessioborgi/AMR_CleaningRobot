@@ -102,7 +102,6 @@ To run it, then, we will have to open two terminals in the workspace:
    - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`.
  
 Here it is the Video of the SLAM building.
-[Video Label](https://www.youtube.com/watch?v=iSu1aiwxvLg) 
 <div style="text-align: center">
   <a href="https://www.youtube.com/your-video-link">
     <img src="images/TeleOp.png" alt="Screenshot" width="1200"/>
