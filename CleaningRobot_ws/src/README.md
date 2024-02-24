@@ -111,11 +111,12 @@ Here it is the Video of the SLAM building.
 
 
 <div style="position: relative; text-align: center;">
-  <img src="images/TeleOp.png" alt="Screenshot" width="1200" style="display: block; margin: 0 auto;">
-  <a href="https://www.youtube.com/your-video-link" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-decoration: none; color: white; font-size: 48px;">
-    &gt;
+  <a href="https://www.youtube.com/your-video-link" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; font-size: 24px; font-weight: bold; opacity: 0; transition: opacity 0.3s ease;">
+    Click to Watch Video
   </a>
+  <img src="images/TeleOp.png" alt="Screenshot" width="1200" style="display: block; margin: 0 auto;">
 </div>
+
 
 
 
