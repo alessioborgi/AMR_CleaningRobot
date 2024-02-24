@@ -100,13 +100,13 @@ To run it, then, we will have to open two terminals in the workspace:
    - Launch the master by using `roslaunch bringup master.launch`.
 - **Terminal 2**:
    - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`.
- 
+
+ You can see the **SLAM BUILDING VIDEO** by clicking on the image:
 
 <div style="text-align: center">
   <a href="https://www.youtube.com/watch?v=iSu1aiwxvLg">
     <p style="font-size: 16px; margin-top: 5px;">Click the Photo to See the Video!</p>
     <img src="images/SLAM_Building_img.png" alt="Screenshot" width="1200"/>
-    
   </a>
 </div>
 
@@ -118,7 +118,3 @@ The result that we will obtain in the folder is like the following.
 <div style="text-align: center">
   <img src="images/SLAM_result.png" alt="Screenshot" width="1200"/>
 </div>
-
-
-### Localization
-
