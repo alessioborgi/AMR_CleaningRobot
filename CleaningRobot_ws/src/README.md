@@ -61,7 +61,6 @@ The Robot Structure description is physically described using the **URDF (“Uni
 <div style="text-align: center">
   <img src="images/Robot_URDF_Scheme.png" alt="Screenshot" width="1200"/>
 </div>
-
 We can verify that the whole Robot Setting opening a new terminal in the Workspace folder and to ask for the `rqt_gui`, using the following command: `rosrun rqt_gui rqt_gui`. If the project is correctly working, you will have the following: 
 
 <div style="text-align: center">
@@ -100,7 +99,17 @@ To run it, then, we will have to open two terminals in the workspace:
    - Re-source the project with `source devel/setup.bash`.
    - Launch the master by using `roslaunch bringup master.launch`.
 - **Terminal 2**:
-   - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`. 
+   - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`.
+
+ You can see the **SLAM BUILDING VIDEO** by clicking on the image:
+
+<div style="text-align: center">
+  <a href="https://www.youtube.com/watch?v=iSu1aiwxvLg">
+    <p style="font-size: 16px; margin-top: 5px;">Click the Photo to See the Video!</p>
+    <img src="images/SLAM_Building_img.png" alt="Screenshot" width="1200"/>
+  </a>
+</div>
+
 
 ### Saving the Map
 This map can be saved using the **Map Server** Ros Package and can be used for Navigational purposes. The following, can be achieved by typing in a new Terminal the following 	`rosrun map_server map_saver -f  src/robot_settings/maps/map`. 
@@ -109,4 +118,3 @@ The result that we will obtain in the folder is like the following.
 <div style="text-align: center">
   <img src="images/SLAM_result.png" alt="Screenshot" width="1200"/>
 </div>
-
