@@ -101,7 +101,7 @@ To run it, then, we will have to open two terminals in the workspace:
 - **Terminal 2**:
    - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`.
 
- You can see the **SLAM BUILDING VIDEO** by clicking on the image:
+You can see the **SLAM BUILDING VIDEO** by clicking on the image:
 
 <div style="text-align: center">
   <a href="https://www.youtube.com/watch?v=iSu1aiwxvLg">
@@ -118,3 +118,26 @@ The result that we will obtain in the folder is like the following.
 <div style="text-align: center">
   <img src="images/SLAM_result.png" alt="Screenshot" width="1200"/>
 </div>
+
+
+## NAVIGATION, PLANNING & OBJECT AVOIDANCE
+Another functionality that his project offers is the ability to perform **Robot Navigation** in an environment/map, and in particular in the one acquired in the step before. The Cleaning Robot, can go from point A to point B, merging two Paths, being:
+- **Global Path**: This is computed over a **Global CostMap**, where it knows where the static obstacles are and in which place has a lower cost to pass for the robot and represents the optimal route.
+- **Local Path**: This gives to the robot the ability to perform **Object Avoidance**, trying to find out alternative paths to go over obstacles and rejoin the Global Path.
+These abilities: **Navigation, Planning** and **Object Avoidance**, makes the Robot an **AMR ("Autonomous Mobile Robots")**. 
+
+This implementation makes use of the **MoveBase** package, that is a Framework where you can plug different Global and Local Planners and different paradigms for your cost map, for it to work which suits your robot. MoveBase takes in input a map from the `map_server`. It then updates the global_costmap which is fed to the global_planner that computes the Global Path of how to reach the goal. It then goes to the Local Planner, to take smaller decisions on how to avoid obstacles. For Local_Planner, we have also a local_costmap for its assistance, together with the sensor data that gives information about the cars/people/objects around the robot. 
+Once we have the Local Plan, we get a command velocity from MoveBase which is the output and our trigger is the MoveBase. 
+
+You can see the **NAVIGATION, PLANNING & OBJECT AVOIDANCE VIDEO** by clicking on the image:
+
+<div style="text-align: center">
+  <a href="https://www.youtube.com/watch?v=JZtBGJTJ42g">
+    <p style="font-size: 16px; margin-top: 5px;">Click the Photo to See the Video!</p>
+    <img src="images/Navigation_Planning_Object_Avoidance_img.png" alt="Screenshot" width="1200"/>
+  </a>
+</div>
+
+
+
+
