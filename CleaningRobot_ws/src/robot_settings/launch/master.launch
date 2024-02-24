@@ -15,7 +15,7 @@ Description: This is the major file (like a "main") that should be launched to s
   <!-- INCLUDES -->
   <!-- WeBots Initialization-->
   <include file="$(find webots_ros)/launch/webots.launch">
-    <arg name="world" value="$(find robot_settings)/worlds/home.wbt"/>
+    <arg name="world" value="$(find robot_settings)/worlds/Home.wbt"/>
     <arg name="mode" value="realtime"/>
     <arg name="no_gui" value="false"/>
   </include>
