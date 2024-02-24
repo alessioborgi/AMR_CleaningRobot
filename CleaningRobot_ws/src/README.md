@@ -101,23 +101,12 @@ To run it, then, we will have to open two terminals in the workspace:
 - **Terminal 2**:
    - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`.
  
-Here it is the Video of the SLAM building.
-<div style="text-align: center">
-  <a href="https://www.youtube.com/your-video-link">
-    <img src="images/TeleOp.png" alt="Screenshot" width="1200"/>
-  </a>
-</div>
-
-
-
 <div style="position: relative; text-align: center;">
-  <a href="https://www.youtube.com/your-video-link" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; font-size: 24px; font-weight: bold; opacity: 0; transition: opacity 0.3s ease;">
-    Click to Watch Video
+  <a href="https://www.youtube.com/watch?v=iSu1aiwxvLg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; font-size: 24px; font-weight: bold; opacity: 0; transition: opacity 0.3s ease;">
+    Click the Image to Watch Video!
   </a>
   <img src="images/TeleOp.png" alt="Screenshot" width="1200" style="display: block; margin: 0 auto;">
 </div>
-
-
 
 
 ### Saving the Map
@@ -125,6 +114,9 @@ This map can be saved using the **Map Server** Ros Package and can be used for N
 
 The result that we will obtain in the folder is like the following.
 <div style="text-align: center">
-  <img src="images/SLAM_result.png" alt="Screenshot" width="1200"/>
+  <img src="images/SLAM_Building_img.png" alt="Screenshot" width="1200"/>
 </div>
+
+
+### Localization
 
