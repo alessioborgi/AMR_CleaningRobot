@@ -103,15 +103,12 @@ To run it, then, we will have to open two terminals in the workspace:
  
 Here it is the Video of the SLAM building.
 [Video Label](https://www.youtube.com/watch?v=iSu1aiwxvLg) 
-[![Video Thumbnail](https://www.youtube.com/watch?v=iSu1aiwxvLg)][Video Label](https://www.youtube.com/watch?v=iSu1aiwxvLg)
-
-
 <div style="text-align: center">
-  <video width="1200" controls>
-    <source src="https://www.youtube.com/watch?v=iSu1aiwxvLg" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <a href="https://www.youtube.com/your-video-link">
+    <img src="images/TeleOp.png" alt="Screenshot" width="1200"/>
+  </a>
 </div>
+
 
 
 
