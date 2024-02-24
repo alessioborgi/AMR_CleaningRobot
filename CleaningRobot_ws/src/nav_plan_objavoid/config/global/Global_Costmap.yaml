@@ -1,0 +1,14 @@
+#
+# File: Global_Costmap.yaml
+# Author: @AlessioBorgi
+# Date: 20-02-2024
+
+# Description: This is a file containing the parameters regarding the Global Costmap.
+#
+
+global_costmap:
+    global_frame: map
+    robot_base_frame: base_link
+    update_frequency: 5.0
+    static_map: true
+    transform_tolerance: 1.5

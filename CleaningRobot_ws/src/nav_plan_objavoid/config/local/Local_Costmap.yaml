@@ -1,3 +1,11 @@
+#
+# File: Local_Costmap.yaml
+# Author: @AlessioBorgi
+# Date: 20-02-2024
+
+# Description: This is a file containing the parameters regarding the Local Costmap. 
+#
+
 local_costmap:
     global_frame: map
     robot_base_frame: base_link
@@ -28,6 +36,7 @@ local_costmap:
         cost_scaling_factor:  5  
         inflation_radius:     0.3
 
+    # Layer added for Obstacle Avoidance.
     obstacle_layer:
         observation_sources: laser_scan_sensor
         footprint_clearing_enabled: true

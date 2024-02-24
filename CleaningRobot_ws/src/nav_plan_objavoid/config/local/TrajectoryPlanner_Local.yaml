@@ -1,3 +1,13 @@
+#
+# File: TrajectoryPlanner_Local.yaml
+# Author: @AlessioBorgi
+# Date: 20-02-2024
+
+# Description: This is a file containing the parameters of the Local Planner. In this case, we are implementing the Base Planner
+#              "TrajectoryPlannerROS".
+#
+
+
 base_local_planner: base_local_planner/TrajectoryPlannerROS
 
 TrajectoryPlannerROS:

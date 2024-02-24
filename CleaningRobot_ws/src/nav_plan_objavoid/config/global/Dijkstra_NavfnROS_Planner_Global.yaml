@@ -1,0 +1,10 @@
+#
+# File: Dijkstra_NavfnROS_Planner_Global.yaml
+# Author: @AlessioBorgi
+# Date: 20-02-2024
+
+# Description: This is a file containing the parameters of the Global Planner. In this case, we are implementing the Base Planner
+#              "NavfnROS", implementing the Dijkstra's Algorithm.
+#
+
+base_global_planner : navfn/NavfnROS

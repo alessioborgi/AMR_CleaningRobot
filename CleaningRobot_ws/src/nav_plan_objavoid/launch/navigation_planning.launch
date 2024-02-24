@@ -13,12 +13,12 @@ Description: This is a secondary file that handles the local and global costmap 
 <launch>
 
    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-    <rosparam file="$(find nav_plan_objavoid)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
-    <rosparam file="$(find nav_plan_objavoid)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find nav_plan_objavoid)/config/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find nav_plan_objavoid)/config/global_costmap_params.yaml" command="load" /> 
-    <rosparam file="$(find nav_plan_objavoid)/config/base_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find nav_plan_objavoid)/config/global_planner_params.yaml" command="load" />
+    <rosparam file="$(find nav_plan_objavoid)/config/Common_Costmap.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find nav_plan_objavoid)/config/Common_Costmap.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find nav_plan_objavoid)/config/local/Local_Costmap.yaml" command="load" />
+    <rosparam file="$(find nav_plan_objavoid)/config/global/Global_Costmap.yaml" command="load" /> 
+    <rosparam file="$(find nav_plan_objavoid)/config/local/TrajectoryPlanner_Local.yaml" command="load" />
+    <rosparam file="$(find nav_plan_objavoid)/config/global/Dijkstra_NavfnROS_Planner_Global.yaml" command="load" />
 
  </node>
 
