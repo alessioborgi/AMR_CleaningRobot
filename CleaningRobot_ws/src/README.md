@@ -145,6 +145,9 @@ There are cases in which the robot is not able to reach the goal. MoveBase has a
 
 Another very important thing is that you can remove data due to noisy sensor data (resulting in points in the map in Rviz, by opening a new terminal and using the clear service by typing `rosservice call /move_base/clear_costmaps`.
 
+<div style="text-align: center">
+  <img src="images/Noisy_Map.jpg" alt="Screenshot" width="1200"/>
+</div>
 
 
 
