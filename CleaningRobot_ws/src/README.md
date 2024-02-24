@@ -104,9 +104,18 @@ To run it, then, we will have to open two terminals in the workspace:
 
 <div style="text-align: center">
   <a href="https://www.youtube.com/your-video-link">
-    <img src="images/TeleOp.png" alt="Screenshot" width="1200"/>
     <p style="font-size: 16px; margin-top: 5px;">Click the Photo to See the Video!</p>
+    <img src="images/TeleOp.png" alt="Screenshot" width="1200"/>
+    
   </a>
+</div>
+
+
+<div style="position: relative; text-align: center;">
+  <img src="images/TeleOp.png" alt="Screenshot" width="1200" style="display: block; margin: 0 auto;">
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center;">
+    <a href="https://www.youtube.com/your-video-link" style="text-decoration: none; color: white; font-size: 24px; font-weight: bold;">Click to Watch Video</a>
+  </div>
 </div>
 
 
