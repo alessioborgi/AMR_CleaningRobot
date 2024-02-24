@@ -102,11 +102,12 @@ To run it, then, we will have to open two terminals in the workspace:
    - Initialize the GMapping Node with `rosrun gmapping slam_gmapping scan:=/Cam_robot_xxxx_Ubuntu_22_04/Lidar/laser_scan/layer0`, with the precise name of the Cam_robot_xxxxxx_... taken by doing `rostopic list`.
  
 <div style="position: relative; text-align: center;">
-  <a href="https://www.youtube.com/watch?v=iSu1aiwxvLg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; font-size: 24px; font-weight: bold; opacity: 0; transition: opacity 0.3s ease;">
-    Click the Image to Watch Video!
-  </a>
   <img src="images/SLAM_Building_img.png" alt="Screenshot" width="1200" style="display: block; margin: 0 auto;">
+  <a href="https://www.youtube.com/watch?v=iSu1aiwxvLg" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-decoration: none; color: white; font-size: 48px;">
+    &gt;
+  </a>
 </div>
+
 
 
 ### Saving the Map
