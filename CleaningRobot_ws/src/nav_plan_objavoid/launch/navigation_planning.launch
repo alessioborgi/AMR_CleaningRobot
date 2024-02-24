@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<!--
+
+File: navigation_planning.launch
+Author: @AlessioBorgi
+Date: 20-02-2024
+
+Description: This is a secondary file that handles the local and global costmap parameters,together with thei planners. 
+
+-->
+
+<launch>
+
+   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find nav_plan_objavoid)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find nav_plan_objavoid)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find nav_plan_objavoid)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find nav_plan_objavoid)/config/global_costmap_params.yaml" command="load" /> 
+    <rosparam file="$(find nav_plan_objavoid)/config/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find nav_plan_objavoid)/config/global_planner_params.yaml" command="load" />
+
+ </node>
+
+</launch> 
+<!-- Reff : http://wiki.ros.org/navigation/Tutorials/RobotSetup -->

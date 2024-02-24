@@ -1,0 +1,8 @@
+prefix=/home/ale/CleaningRobot_RP/CleaningRobot_ws/install
+
+Name: nav_plan_objavoid
+Description: Description of nav_plan_objavoid
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
