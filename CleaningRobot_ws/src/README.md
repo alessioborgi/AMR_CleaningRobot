@@ -5,8 +5,12 @@
 
 
 ## Introduction
-Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is designed to simulate a cleaning robot using the Robot Operating System (ROS), Webots, and Rviz on Ubuntu 20.04. The cleaning robot is capable of mapping its environment and autonomously planning and navigating through it to achieve predefined cleaning goals.
+Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is designed to simulate a **Cleaning Robot** using the Robot Operating System (ROS), Webots, and Rviz on Ubuntu 20.04. 
 
+### Key Capabilities**:
+- **SLAM**: The robot meticulously builds a map of its environment, capturing every detail using sensors like Lidar and odometry. This comprehensive map paves the way for efficient and obstacle-aware navigation.
+- **Planning Trajectories**: The robot employs sophisticated algorithms like NavfnROS and TrajectoryPlannerROS to calculate optimal paths to reach designated goals, taking into account both static obstacles in the map and dynamic ones encountered in real-time.
+- **Dynamic Obstacle Avoidance**: Equipped with sensors and intelligent algorithms, it can detect and gracefully steer around obstacles, ensuring smooth and uninterrupted navigation.
 
 
 
@@ -146,7 +150,7 @@ There are cases in which the robot is not able to reach the goal. MoveBase has a
 Another very important thing is that you can remove data due to noisy sensor data (resulting in points in the map in Rviz, by opening a new terminal and using the clear service by typing `rosservice call /move_base/clear_costmaps`.
 
 <div style="text-align: center">
-  <img src="images/Noisy_Map.jpg" alt="Screenshot" width="700"/>
+  <img src="images/Noisy_Map.jpg" alt="Screenshot" width="400"/>
 </div>
 
 
