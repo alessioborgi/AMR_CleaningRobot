@@ -36,13 +36,15 @@ void Localization::publish_lidar_link(){
 
 // Subscriber function for GPS sensor.
 void Localization::getGPS(){
-
+    
+    // Take the current Position Data from the GPS sensor and subscribe to the .../global/values Topic. 
     subscribe_gps_ = nh_.subscribe(robot_name_+"/global/values", 1, &Localization::GPSCallBack,this);
 }
 
 // Subscriber function for IMU sensor.
 void Localization::getIMU(){
 
+    // Take the current Rotational Quaternion Data from the IMU sensor and subscribe to the .../IMU/quaternion Topic.
     subscribe_imu_ = nh_.subscribe(robot_name_+"/IMU/quaternion", 1, &Localization::IMUCallBack,this);
 }
 
@@ -107,18 +109,19 @@ void Localization::ToEulerAngles(float x, float y , float z , float w ) {
 // Function to publish transformation for base_link.
 void Localization::publish_base_link(){
 
-  static tf::TransformBroadcaster br;
-  tf::Transform transform;
-  transform.setOrigin( tf::Vector3(-current_x, current_z, current_y) ); // Set position based on GPS data
+    // Create the TransformBoradcaster and the Transform. 
+    static tf::TransformBroadcaster br;
+    tf::Transform transform;
+    transform.setOrigin( tf::Vector3(-current_x, current_z, current_y) ); // Set position based on GPS data.
 
-  // Convert quaternion to Euler angles and set orientation
-  ToEulerAngles(current_rot_x,current_rot_y,current_rot_z,current_rot_w);
-  tf::Quaternion q;
-  q.setRPY(0, 0, roll_);
-  transform.setRotation(q);
+    // Convert quaternion to Euler angles and set orientation.
+    ToEulerAngles(current_rot_x,current_rot_y,current_rot_z,current_rot_w);
+    tf::Quaternion q;
+    q.setRPY(0, 0, roll_);
+    transform.setRotation(q);
 
-  // Broadcast transformation from the map to base_link.
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "base_link"));
+    // Broadcast transformation from the map to base_link.
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "base_link"));
 }
 
 // Main function
