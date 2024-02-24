@@ -30,7 +30,7 @@ Welcome to the Cleaning Robot project designed by Alessio Borgi! This project is
    - Go in the `robot_settings` package using `cd robot_settings`. 
    - Install all the dependencies required by the package using `rosdep install --from-paths src --ignore-src-r-y`.
    - Go back to the Workspace fodler using `cd ..`. 
-   - Go in the `navigation` package using `cd navigation`. 
+   - Go in the `nav_plan_objavoid` package using `cd nav_plan_objavoid`. 
    - Install all the dependencies required by the package using `rosdep install --from-paths src --ignore-src-r-y`.
 
 4. **Launching the Project:**
@@ -122,12 +122,15 @@ The result that we will obtain in the folder is like the following.
 
 ## NAVIGATION, PLANNING & OBJECT AVOIDANCE
 Another functionality that his project offers is the ability to perform **Robot Navigation** in an environment/map, and in particular in the one acquired in the step before. The Cleaning Robot, can go from point A to point B, merging two Paths, being:
-- **Global Path**: This is computed over a **Global CostMap**, where it knows where the static obstacles are and in which place has a lower cost to pass for the robot and represents the optimal route.
-- **Local Path**: This gives to the robot the ability to perform **Object Avoidance**, trying to find out alternative paths to go over obstacles and rejoin the Global Path.
+- **Global Path**: This is computed over a **Global CostMap**, where it knows where the static obstacles are and in which place has a lower cost to pass for the robot and represents the optimal route. In my case, the implemented **Global Planner** is **NavfnROS**, providing a fast interpolated navigation function that can be used to create plans for a mobile base. The navigation function is computed with **Dijkstra's Algorithm**. 
+- **Local Path**: This gives to the robot the ability to perform **Object Avoidance**, trying to find out alternative paths to go over obstacles and rejoin the Global Path. In my case, the implemented **Local Planner** is **TrajectoryPlannerROS**, being the basic Local Planner, that provides an implementation of the **Trajectory Rollout and Dynamic-Window** approaches to local robot navigation on a plane. Given a plan to follow and a cost-map, the controller produces velocity commands to send to a mobile base.
+  
 These abilities: **Navigation, Planning** and **Object Avoidance**, makes the Robot an **AMR ("Autonomous Mobile Robots")**. 
 
 This implementation makes use of the **MoveBase** package, that is a Framework where you can plug different Global and Local Planners and different paradigms for your cost map, for it to work which suits your robot. MoveBase takes in input a map from the `map_server`. It then updates the global_costmap which is fed to the global_planner that computes the Global Path of how to reach the goal. It then goes to the Local Planner, to take smaller decisions on how to avoid obstacles. For Local_Planner, we have also a local_costmap for its assistance, together with the sensor data that gives information about the cars/people/objects around the robot. 
 Once we have the Local Plan, we get a command velocity from MoveBase which is the output and our trigger is the MoveBase. 
+
+To run the **Planning** and **Object Avoidance**, you can click on the *2D Nav Goal* button on the upper part of Rviz and then click on the point you would like to have the robot. The robot will automatically plan the path to from its starting point to the goal point and will go over this trajectory, taking into account also eventual obstacles in the path, with the ability to go over them. (Ex. In the map below, there are two obstacles in the map, that were not present during the SLAM process and that will be therefore treated as newly dynamic obstacles.)
 
 You can see the **NAVIGATION, PLANNING & OBJECT AVOIDANCE VIDEO** by clicking on the image:
 
@@ -137,6 +140,10 @@ You can see the **NAVIGATION, PLANNING & OBJECT AVOIDANCE VIDEO** by clicking on
     <img src="images/Navigation_Planning_Object_Avoidance_img.png" alt="Screenshot" width="1200"/>
   </a>
 </div>
+
+There are cases in which the robot is not able to reach the goal. MoveBase has a great recovery behaviour in this case: it rotates around its axis in such a way to seek for new paths. If it finds that no solution can be found, it will send a cancel in move_base. 
+
+Another very important thing is that you can remove data due to noisy sensor data (resulting in points in the map in Rviz, by opening a new terminal and using the clear service by typing `rosservice call /move_base/clear_costmaps`.
 
 
 
