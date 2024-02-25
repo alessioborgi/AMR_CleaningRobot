@@ -136,10 +136,19 @@ Once we have the Local Plan, we get a command velocity from MoveBase which is th
 
 To run the **Planning** and **Object Avoidance**, you can click on the *2D Nav Goal* button on the upper part of Rviz and then click on the point you would like to have the robot. The robot will automatically plan the path to from its starting point to the goal point and will go over this trajectory, taking into account also eventual obstacles in the path, with the ability to go over them. (Ex. In the map below, there are two obstacles in the map, that were not present during the SLAM process and that will be therefore treated as newly dynamic obstacles.)
 
-You can see the **NAVIGATION, PLANNING & OBJECT AVOIDANCE VIDEO** by clicking on the image:
+You can see the **NAVIGATION & PLANNING VIDEO** by clicking on the image:
 
 <div style="text-align: center">
   <a href="https://www.youtube.com/watch?v=JZtBGJTJ42g">
+    <p style="font-size: 16px; margin-top: 5px;">Click the Photo to See the Video!</p>
+    <img src="images/Navigation_Planning_Object_Avoidance_img.png" alt="Screenshot" width="1200"/>
+  </a>
+</div>
+
+You can see the **OBJECT AVOIDANCE DURING PLANNING VISUALIZATION** by clicking on the image:
+
+<div style="text-align: center">
+  <a href="https://www.youtube.com/watch?v=Vp21lLMRADQ">
     <p style="font-size: 16px; margin-top: 5px;">Click the Photo to See the Video!</p>
     <img src="images/Navigation_Planning_Object_Avoidance_img.png" alt="Screenshot" width="1200"/>
   </a>
