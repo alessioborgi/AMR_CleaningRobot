@@ -6,7 +6,8 @@ File: master.launch
 Author: @AlessioBorgi
 Date: 07-02-2024
 
-Description: This is the major file (like a "main") that should be launched to start the project. 
+Description: This is the major file (like a "main") that should be launched to start the project. Since it's a launch file, it will 
+             be used to launch multiple nodes all at once.
 
 -->
 

@@ -174,7 +174,7 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        Cam_robot_2405144_soft_illusion/Lidar:
+        Cam_robot_2405144_AlessioBorgi/Lidar:
           Value: true
         back_left_wheel:
           Value: true
@@ -213,7 +213,7 @@ Visualization Manager:
       Tree:
         map:
           base_link:
-            Cam_robot_2405144_soft_illusion/Lidar:
+            Cam_robot_2405144_AlessioBorgi/Lidar:
               {}
             back_left_wheel:
               {}
