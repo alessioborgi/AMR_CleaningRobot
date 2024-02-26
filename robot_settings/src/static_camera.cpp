@@ -31,6 +31,41 @@ void StaticCamera::NameCallBack(const std_msgs::String& msg){
     getRotary();
 }
 
+// Function to publish transformation from linear_link.
+void StaticCamera::publish_linear_link(float value){
+
+    // Declare the TransformBroadcaster and the Transform variables.
+    static tf::TransformBroadcaster br;
+    tf::Transform transform;
+
+    // Set position of linear_link.
+    transform.setOrigin( tf::Vector3(0,0,value+0.05/2)); //Robot height/2 offset for linear link
+    tf::Quaternion q;
+    q.setRPY(0, 0, 0);
+    transform.setRotation(q);
+
+    // Broadcast Transformation from the base_link(box) to the linear_link(camera's link).
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link" , "linear_link"));
+}
+
+// Function to publish transformation from camera_link.
+void StaticCamera::publish_camera_link(float value){
+
+    // Declare the TransformBroadcaster and the Transform variables.
+    static tf::TransformBroadcaster br;
+    tf::Transform transform;
+
+    // Set position of camera_link.
+    transform.setOrigin( tf::Vector3(0,0,0));
+    tf::Quaternion q;
+    q.setRPY(0, 0 ,value + 1.57 ); // 90 degree off camera in proto.
+    transform.setRotation(q);
+
+    // Broadcast transformation from rotary_link to camera_link.
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "rotary_link" , "camera_link"));
+}
+
+
 // Subscribe to Linear Sensor topic.
 void StaticCamera::getLinear(){
 
@@ -78,40 +113,6 @@ void StaticCamera::ToEulerAngles(float x, float y , float z , float w ) {
     double siny_cosp = 2 * (w * z + x * y);
     double cosy_cosp = 1 - 2 * (y * y + z * z);
     yaw_ = std::atan2(siny_cosp, cosy_cosp);
-}
-
-// Function to publish transformation from linear_link.
-void StaticCamera::publish_linear_link(float value){
-
-    // Declare the TransformBroadcaster and the Transform variables.
-    static tf::TransformBroadcaster br;
-    tf::Transform transform;
-
-    // Set position of linear_link.
-    transform.setOrigin( tf::Vector3(0,0,value+0.05/2)); //Robot height/2 offset for linear link
-    tf::Quaternion q;
-    q.setRPY(0, 0, 0);
-    transform.setRotation(q);
-
-    // Broadcast Transformation from the base_link(box) to the linear_link(camera's link).
-    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link" , "linear_link"));
-}
-
-// Function to publish transformation from camera_link.
-void StaticCamera::publish_camera_link(float value){
-
-    // Declare the TransformBroadcaster and the Transform variables.
-    static tf::TransformBroadcaster br;
-    tf::Transform transform;
-
-    // Set position of camera_link.
-    transform.setOrigin( tf::Vector3(0,0,0));
-    tf::Quaternion q;
-    q.setRPY(0, 0 ,value + 1.57 ); // 90 degree off camera in proto.
-    transform.setRotation(q);
-
-    // Broadcast transformation from rotary_link to camera_link.
-    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "rotary_link" , "camera_link"));
 }
 
 // Main function

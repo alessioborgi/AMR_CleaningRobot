@@ -36,7 +36,7 @@ void SensorEnable::NameCallBack(const std_msgs::String& msg){
     Initialize_sensors();
 }
 
-// Callback function for /cmd_vel topic.
+// Callback function for /cmd_vel topic, that handles the velocity.
 void SensorEnable::CmdvelCallBack(const geometry_msgs::Twist& msg){
 
   // Extract linear and angular velocities.

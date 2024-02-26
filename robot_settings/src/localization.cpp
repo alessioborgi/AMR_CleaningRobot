@@ -19,6 +19,23 @@ Localization::Localization(ros::NodeHandle* nodehandle):nh_(*nodehandle){
     subscribe_name_ = nh_.subscribe("/model_name", 1, &Localization::NameCallBack,this);
 }
 
+// Function to publish transformation for base_link.
+void Localization::publish_base_link(){
+
+    // Create the TransformBoradcaster and the Transform. 
+    static tf::TransformBroadcaster br;
+    tf::Transform transform;
+    transform.setOrigin( tf::Vector3(-current_x, current_z, current_y) ); // Set position based on GPS data.
+
+    // Convert quaternion to Euler angles and set orientation.
+    ToEulerAngles(current_rot_x,current_rot_y,current_rot_z,current_rot_w);
+    tf::Quaternion q;
+    q.setRPY(0, 0, roll_);
+    transform.setRotation(q);
+
+    // Broadcast transformation from the map to base_link.
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "base_link"));
+}
 
 // Function to publish transformation for lidar_link.
 void Localization::publish_lidar_link(){
@@ -104,24 +121,6 @@ void Localization::ToEulerAngles(float x, float y , float z , float w ) {
     double siny_cosp = 2 * (w * z + x * y);
     double cosy_cosp = 1 - 2 * (y * y + z * z);
     yaw_ = std::atan2(siny_cosp, cosy_cosp);
-}
-
-// Function to publish transformation for base_link.
-void Localization::publish_base_link(){
-
-    // Create the TransformBoradcaster and the Transform. 
-    static tf::TransformBroadcaster br;
-    tf::Transform transform;
-    transform.setOrigin( tf::Vector3(-current_x, current_z, current_y) ); // Set position based on GPS data.
-
-    // Convert quaternion to Euler angles and set orientation.
-    ToEulerAngles(current_rot_x,current_rot_y,current_rot_z,current_rot_w);
-    tf::Quaternion q;
-    q.setRPY(0, 0, roll_);
-    transform.setRotation(q);
-
-    // Broadcast transformation from the map to base_link.
-    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "base_link"));
 }
 
 // Main function
