@@ -62,7 +62,7 @@ void SensorEnable::Initialize_sensors(){
     std::vector<ros::ServiceClient> vec_client; 
 
     // Enable sensors using services.
-    for (auto sensor = sensors.begin(); sensor != sensors.end(); ++sensor){
+    for (auto sensor = sensors.begin(); sensor != sensors.end(); ++sensor){   // (auto): Automatic Type Inference.
       
         vec_client.push_back(nh_.serviceClient<webots_ros::set_int>(SensorEnable::robot_name_+ *sensor +"/enable")); // Compose the Service Name.
         ros::service::waitForService(SensorEnable::robot_name_ + *sensor + "/enable");
